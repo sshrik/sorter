@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 const join = require('path').join;
 
 module.exports = {
@@ -10,6 +11,10 @@ module.exports = {
     path: join(__dirname, '/dist'),
   },
   resolve: {
+    alias: {
+      '@comp': path.resolve(__dirname, 'src/components'),
+      '@page': path.resolve(__dirname, 'src/page'),
+    },
     extensions: ['.js', '.jsx', '.tsx', '.ts']
   },
   module: {
