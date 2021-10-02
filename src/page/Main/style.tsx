@@ -5,6 +5,6 @@ export const MainPageContainer = styled.div`
   height: var(--page-height);
 
   .main-page {
-
+    
   }
 `;

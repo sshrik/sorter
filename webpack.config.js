@@ -14,6 +14,8 @@ module.exports = {
     alias: {
       '@comp': path.resolve(__dirname, 'src/components'),
       '@page': path.resolve(__dirname, 'src/page'),
+      '@util': path.resolve(__dirname, 'src/util'),
+      '@img': path.resolve(__dirname, 'public/image'),
     },
     extensions: ['.js', '.jsx', '.tsx', '.ts']
   },
@@ -29,13 +31,21 @@ module.exports = {
       }
     },
     {
-      test: /\.tsx?$/,
+      test: /\.(tsx|ts)$/,
       use: 'ts-loader',
       exclude: /node_modules/,
     },
     {
       test: /\.(scss|css)$/,
       use: ["css-loader"]
+    },
+    {
+      test: /\.(png|jpe?g|gif)$/i,
+      use: [
+        {
+          loader: 'file-loader',
+        },
+      ]
     }
     ]
   },
