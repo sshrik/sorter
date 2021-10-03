@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import { GameIconContainer, GameIconImgContainer } from "./style";
-import { CARD_GAME, LINE_GAME } from "@util/strings";
-import { commaFormat } from "@util/utils";
+import { CARD_GAME, LINE_GAME, MY_BEST, TOTAL_BEST, PLAY_GAME } from "@util/strings";
+import { scoreFormat } from "@util/utils";
 import CardGameIcon from '@img/Main/CardGame.png';
 import LineGameIcon from '@img/Main/LineGame.png';
 
@@ -33,16 +33,16 @@ export default function GameIcon(props: GameIconProps): ReactElement {
       <GameIconImgContainer>
         {gameIcon}
       </GameIconImgContainer>
-      <p>{gameName}</p>
-      <button className="game-start-btn">{"게임하기"}</button>
+      <p className="game-title">{gameName}</p>
+      <button className="game-start-btn">{PLAY_GAME}</button>
       <div className="best-score-container">
         <div className="best-score-item">
-          <p>{"개인 최고기록"}</p>
-          <p>{commaFormat(myBestScore) + "점"}</p>
+          <p>{MY_BEST}</p>
+          <p>{scoreFormat(myBestScore)}</p>
         </div>
         <div className="best-score-item">
-          <p>{"전체 최고기록"}</p>
-          <p>{commaFormat(totalBestScore) + "점"}</p>
+          <p>{TOTAL_BEST}</p>
+          <p>{scoreFormat(totalBestScore)}</p>
         </div>
       </div>
     </GameIconContainer>);

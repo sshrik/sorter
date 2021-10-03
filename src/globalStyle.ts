@@ -17,7 +17,8 @@ export const GlobalStyle = createGlobalStyle`
 
     --page-height: calc(100vh - 100px);
     --background-gray: #F3F3F3;
-    --mustard: #FFB938;
+    --mustard: hsl(39, 100%, 63%);
+    --dark-mustard: hsl(39, 100%, 53%);
     --black: #333333;
     --white: #FFFFFF;
 
