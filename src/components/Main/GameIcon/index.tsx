@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+import { Link } from "react-router-dom";
 import { GameIconContainer, GameIconImgContainer } from "./style";
 import { CARD_GAME, LINE_GAME, MY_BEST, TOTAL_BEST, PLAY_GAME } from "@util/strings";
 import { scoreFormat } from "@util/utils";
@@ -9,11 +10,11 @@ interface GameIconProps {
   gameName: string;
   myBestScore: number;
   totalBestScore: number;
-  onGameStart: () => void;
+  onGameStart: string;
 }
 
 export default function GameIcon(props: GameIconProps): ReactElement {
-  const { gameName, myBestScore, totalBestScore } = props;
+  const { gameName, myBestScore, totalBestScore, onGameStart } = props;
   let gameIcon: ReactElement;
 
   switch (gameName) {
@@ -34,7 +35,9 @@ export default function GameIcon(props: GameIconProps): ReactElement {
         {gameIcon}
       </GameIconImgContainer>
       <p className="game-title">{gameName}</p>
-      <button className="game-start-btn">{PLAY_GAME}</button>
+      <Link to={onGameStart}>
+        <button className="game-start-btn">{PLAY_GAME}</button>
+      </Link>
       <div className="best-score-container">
         <div className="best-score-item">
           <p>{MY_BEST}</p>
