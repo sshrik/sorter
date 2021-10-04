@@ -1,9 +1,9 @@
 import { ReactElement } from "react";
-import { LinePageContainer } from "./style";
+import * as S from "./style";
 
 export default function LinePage(): ReactElement {
   return (
-    <LinePageContainer>
+    <S.LineTutotrialContainer>
       <p>CARD_PAGE</p>
-    </LinePageContainer>);
+    </S.LineTutotrialContainer>);
 } 

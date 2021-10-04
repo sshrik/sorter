@@ -18,6 +18,8 @@ export const GameIconContainer = styled.div`
     background-color: var(--mustard);
     transition-duration: 0.3s;
     margin: 12px 0px 16px 0px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
 
     &:hover {

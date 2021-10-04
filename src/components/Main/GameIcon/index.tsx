@@ -1,8 +1,10 @@
 import { ReactElement } from "react";
 import { Link } from "react-router-dom";
-import { GameIconContainer, GameIconImgContainer } from "./style";
+
+import * as S from "./style";
 import { CARD_GAME, LINE_GAME, MY_BEST, TOTAL_BEST, PLAY_GAME } from "@util/strings";
 import { scoreFormat } from "@util/utils";
+
 import CardGameIcon from '@img/Main/CardGame.png';
 import LineGameIcon from '@img/Main/LineGame.png';
 
@@ -30,10 +32,10 @@ export default function GameIcon(props: GameIconProps): ReactElement {
   }
 
   return (
-    <GameIconContainer>
-      <GameIconImgContainer>
+    <S.GameIconContainer>
+      <S.GameIconImgContainer>
         {gameIcon}
-      </GameIconImgContainer>
+      </S.GameIconImgContainer>
       <p className="game-title">{gameName}</p>
       <Link to={onGameStart}>
         <button className="game-start-btn">{PLAY_GAME}</button>
@@ -48,5 +50,5 @@ export default function GameIcon(props: GameIconProps): ReactElement {
           <p>{scoreFormat(totalBestScore)}</p>
         </div>
       </div>
-    </GameIconContainer>);
+    </S.GameIconContainer>);
 } 
